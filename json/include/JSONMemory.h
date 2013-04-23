@@ -3,7 +3,7 @@
 
 #include <cstdlib> //for malloc, realloc, and free
 #include <cstring> //for memmove
-#include "../JSONOptions.h"
+#include "JSONOptions.h"
 #include "JSONDebug.h"
 
 #if defined(JSON_DEBUG) || defined(JSON_SAFE)

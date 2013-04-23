@@ -1,7 +1,7 @@
 #ifndef LIBJSON_H
 #define LIBJSON_H
 
-#include "Source/JSONDefs.h"  //for typedefs of functions, strings, and nodes
+#include "JSONDefs.h"  //for typedefs of functions, strings, and nodes
 
 /*
     This is the C interface to libjson.

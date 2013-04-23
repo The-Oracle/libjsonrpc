@@ -1,10 +1,10 @@
 CMAKE_MINIMUM_REQUIRED(VERSION 2.8)
-PROJECT(jsonrpc) 
+PROJECT(JSONRPC) 
 
 # SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -w")
 
 INCLUDE_DIRECTORIES(include ${CMAKE_CURRENT_SOURCE_DIR}/../json/include)
-ADD_LIBRARY(jsonrpc SHARED 
+ADD_LIBRARY(jsonrpc STATIC 
 	    src/jsonrpc_client.cpp
 	    src/jsonrpc_handler.cpp 
 	    src/jsonrpc_server.cpp
