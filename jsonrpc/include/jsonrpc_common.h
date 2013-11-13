@@ -34,6 +34,10 @@
 #include <unistd.h>
 #include <netinet/in.h>
 #include <netdb.h>
+#include <fcntl.h>
+#define SPRINTF sprintf
+#define ULONG unsigned long
+#define FIONBIO O_NONBLOCK
 
 #else
 
@@ -50,6 +54,7 @@
 #endif
 
 typedef int socklen_t;
+#define SPRINTF sprintf_s
 #define close closesocket
 #define uint16_t unsigned short
 #define ssize_t unsigned int

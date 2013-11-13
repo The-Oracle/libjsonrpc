@@ -152,9 +152,16 @@ namespace networking
       int on = 1;
 
       sock = socket(p->ai_family, p->ai_socktype, p->ai_protocol);
+      #ifdef WIN32
       ULONG yes = 1;
       ioctlsocket(sock, FIONBIO, &yes);
-
+      #else
+      bool blocking = true;
+      int flags = fcntl(sock, F_GETFL, 0);
+      if (flags < 0) return false;
+      flags = blocking ? (flags&~O_NONBLOCK) : (flags|O_NONBLOCK);
+      return (fcntl(sock, F_SETFL, flags) == 0) ? true : false;
+      #endif
       if(sock == -1)
       {
         continue;
